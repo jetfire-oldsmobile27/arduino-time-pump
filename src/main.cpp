@@ -62,15 +62,8 @@ void loop() {
     String line = Serial.readStringUntil('\n');
     line.trim();
     if (line.length() > 0) {
-      Serial.print("Received: ");
-      Serial.println(line);
-      
       RtcDateTime dt;
       if (parseDateTimeString(line, dt)) {
-        Serial.print("Parsed: ");
-        printDateTime(dt);
-        Serial.println();
-        
         if (rtc.setDateTime(dt)) {
           Serial.println("OK");
           RtcDateTime now = rtc.getDateTime();
