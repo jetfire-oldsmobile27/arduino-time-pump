@@ -1,4 +1,4 @@
-#include "TaskProvider.h"
+#include "TaskProvider.hpp"
 
 void TaskProvider::exec(const Defines::TaskType& task2exec) {
         TaskFunc task = Task2Func(task2exec);

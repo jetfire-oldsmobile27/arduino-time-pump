@@ -1,12 +1,14 @@
 #include <Arduino.h>
-#include "defines.h"
-#include "TimeProvider.h"
-#include "StorageProvider.h"
-#include "TimeUtils.h"
+#include "defines.hpp"
+#include "TimeProvider.hpp"
+#include "StorageProvider.hpp"
+#include "TimeUtils.hpp"
+#include "TaskProvider.hpp"
 
 
 TimeProvider rtc(Defines::PIN_IO, Defines::PIN_SCLK, Defines::PIN_CE);
 StorageProvider storage;
+TaskProvider task_provider;
 
 void DailyRoutine() {
   Serial.println("✅ Daily task executed!");
@@ -14,6 +16,7 @@ void DailyRoutine() {
   Serial.print("📅 Executed at: ");
   printDateTime(now);
   Serial.println();
+  //task_provider.exec(Defines::TaskType::EnablePumpOnce); // TODO
 }
 
 void setup() {

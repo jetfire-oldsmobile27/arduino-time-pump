@@ -1,4 +1,4 @@
-#include "TimeUtils.h"
+#include "TimeUtils.hpp"
 
 void printDateTime(const RtcDateTime& dt) {
   char buf[20];

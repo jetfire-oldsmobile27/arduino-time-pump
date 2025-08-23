@@ -1,6 +1,6 @@
 #pragma once
 #include <Arduino.h>
-#include "defines.h"
+#include "defines.hpp"
 
 using TaskFunc = void (*)();  
 

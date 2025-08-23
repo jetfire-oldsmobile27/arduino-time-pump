@@ -1,4 +1,4 @@
-#include "TimeProvider.h"
+#include "TimeProvider.hpp"
 
 
 TimeProvider::TimeProvider(uint8_t io, uint8_t sclk, uint8_t ce)
