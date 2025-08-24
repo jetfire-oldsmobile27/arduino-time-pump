@@ -1,10 +1,18 @@
 #pragma once 
 #include "Arduino.h"
 
+#define BUILD_DEBUG 1  // 1 - debug, 0 - release
+
 namespace Defines {
 
 
 constexpr uint32_t check_interval  = 30000;  // 30 сек
+
+#if BUILD_DEBUG
+  constexpr bool DEBUG = true;
+#else 
+  constexpr bool DEBUG = false;
+#endif
 
 /* Platform-specific block 
 * Warning! Actual only for Arduino Uno(ATmega 328p old bootloader)
