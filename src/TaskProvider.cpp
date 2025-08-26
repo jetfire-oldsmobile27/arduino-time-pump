@@ -14,7 +14,9 @@ TaskFunc TaskProvider::Task2Func(const Defines::TaskType& type) {
                 if(Defines::pump_pin == 0) {
                     Serial.print("pump_pin not realized");
                 }
-                analogWrite(Defines::pump_pin, 128); 
+                digitalWrite(Defines::pump_pin, HIGH); 
+                delay(2000);
+                digitalWrite(Defines::pump_pin, LOW);
             };
             break;// на всякий случай
         case Defines::TaskType::EnableRelay:
@@ -22,7 +24,7 @@ TaskFunc TaskProvider::Task2Func(const Defines::TaskType& type) {
                 if(Defines::relay_pin == 0) {
                     Serial.print("relay_pin not realized");
                 }
-                analogWrite(Defines::relay_pin, 255);
+                digitalWrite(Defines::relay_pin, 255);
             };
             break;
         case Defines::TaskType::DisableRelay:
@@ -30,7 +32,7 @@ TaskFunc TaskProvider::Task2Func(const Defines::TaskType& type) {
                 if(Defines::relay_pin == 0) {
                     Serial.print("relay_pin not realized");
                 }
-                analogWrite(Defines::relay_pin, 0);
+                digitalWrite(Defines::relay_pin, 0);
             };
             break;
         default:

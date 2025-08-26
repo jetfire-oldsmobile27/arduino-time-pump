@@ -18,11 +18,14 @@ void DailyRoutine() {
     printDateTime(now);
     Serial.println();
   }
-  // task_provider.exec(Defines::TaskType::EnablePumpOnce); // TODO
+  task_provider.exec(Defines::TaskType::EnablePumpOnce); // TODO
 }
 
 void setup() {
+  // INIT ALL PINS
   pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(Defines::pump_pin, OUTPUT);
+  
   digitalWrite(LED_BUILTIN, LOW);
 
   if (Defines::DEBUG) {
